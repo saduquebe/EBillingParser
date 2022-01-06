@@ -1,3 +1,4 @@
+package parser;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -7,8 +8,6 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.StringReader;
 import java.util.ArrayList;
-
-import javax.swing.JFileChooser;
 
 public class App {
     public static void main(String[] args) throws IOException {
@@ -22,7 +21,6 @@ public class App {
         }
         while (line != null) {
             BufferedReader lineBuffer = new BufferedReader(new StringReader(line));
-            System.out.println(option);
             if(option != 0){
                 out = addLine(line, lineBuffer, option);
                 if (!out.equals("error")){
@@ -35,6 +33,7 @@ public class App {
             line = in.readLine();
         }
         WriteOutput(out);
+        System.out.println("Terminated");
     }
 
     public static String addLine(String line, BufferedReader lineBuffer, int option) throws IOException{
