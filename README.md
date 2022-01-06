@@ -1,18 +1,10 @@
-## Getting Started
+## Instrucciones básicas
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+La clase a ejecutar como main corresponde a App.java, con los siguientes parámetros:
+- `input path`: La carpeta relativa al proyecto donde se encuentran los datoa de entrada. e.g `src/input.txt`
+- `opt`: Flag del filtrado de datos. Una opción entre 1 y 7 correspondiente a cada uno de los componentes de una factura.
+Si se requiere la salida total del Parser, este argumento debe estar en blanco o ser 0.
 
-## Folder Structure
+Ejemplo: 
 
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+`src/input.txt 0` entrega toda la salida del parser  

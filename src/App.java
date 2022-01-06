@@ -22,6 +22,7 @@ public class App {
         }
         while (line != null) {
             BufferedReader lineBuffer = new BufferedReader(new StringReader(line));
+            System.out.println(option);
             if(option != 0){
                 out = addLine(line, lineBuffer, option);
                 if (!out.equals("error")){
@@ -40,7 +41,6 @@ public class App {
         switch (option){
             case 1:
             if (line.startsWith("01")) {
-                
                 return headerOutput(lineBuffer);
             }
             break;
@@ -88,6 +88,8 @@ public class App {
                 return documentOutput(lineBuffer);
             } else if (line.startsWith("07")) {
                 return bodyOutput(lineBuffer);
+            }else{
+                return "";
             }
         }
         return "error";
