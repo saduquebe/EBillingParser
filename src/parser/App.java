@@ -9,9 +9,19 @@ import java.io.OutputStreamWriter;
 import java.io.StringReader;
 import java.util.ArrayList;
 
+import javax.swing.JFileChooser;
+import javax.swing.JPanel;
+
 public class App {
     public static void main(String[] args) throws IOException {
         File input = new File(args[0]);
+        JFileChooser fc = new JFileChooser();
+        int retValue = fc.showOpenDialog(new JPanel());
+        if(retValue == JFileChooser.APPROVE_OPTION){
+            input = fc.getSelectedFile();
+        }else {
+            System.out.println("Next time select a file.");
+        }
         String out = "";
         BufferedReader in = new BufferedReader(new FileReader(input));
         String line = in.readLine();
