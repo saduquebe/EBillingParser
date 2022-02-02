@@ -14,7 +14,9 @@ import javax.swing.JPanel;
 
 public class App {
     public static void main(String[] args) throws IOException {
-        File input = new File(args[0]);
+        File input = new File("");
+        ParserUtils.legacy = args[0].contains("l");
+        System.out.println(ParserUtils.legacy);
         JFileChooser fc = new JFileChooser();
         int retValue = fc.showOpenDialog(new JPanel());
         if(retValue == JFileChooser.APPROVE_OPTION){

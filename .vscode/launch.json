@@ -9,7 +9,7 @@
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}",
-            "args": "C:/Users/sduque/Downloads/input.txt 0"
+            "args": "-l 0"
         },
         {
             "type": "java",
