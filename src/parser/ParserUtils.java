@@ -1,4 +1,5 @@
 package parser;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -113,10 +114,10 @@ public class ParserUtils {
         data.add(parseCsv(App.readByLen(legacy ? 2 : 5, detail)));
         data.add(parseCsv(App.readByLen(50, detail)));
         data.add(parseCsv(App.readByLen(12, detail)));
-        //DOS DOS - 50
+        // DOS DOS - 50
         data.add(parseCsv(App.readByLen(legacy ? 2 : 4, detail)));
         data.add(parseCsv(App.readByLen(50, detail)));
-        //CUATRO CUATRO - 52
+        // CUATRO CUATRO - 52
         data.add(parseCsv(App.readByLen(legacy ? 4 : 4, detail)));
         data.add(parseCsv(App.readByLen(50, detail)));
         data.add(parseCsv(App.readByLen(9, detail)));
@@ -224,7 +225,7 @@ public class ParserUtils {
     static ArrayList<String> parseHeader(BufferedReader header) throws IOException {
         ArrayList<String> data = new ArrayList<String>();
         data.add(parseCsv(App.readByLen(2, header)));
-        data.add(parseCsv(App.readByLen(legacy? 3 : 6 , header)));
+        data.add(parseCsv(App.readByLen(legacy ? 3 : 6, header)));
         data.add(parseCsv(App.readByLen(20, header)));
         data.add(parseCsv(App.readByLen(20, header)));
         data.add(parseCsv(App.readByLen(3, header)));
@@ -257,9 +258,11 @@ public class ParserUtils {
         data.add(parseCsv(App.readByLen(1, header)));
         data.add(parseCsv(App.readByLen(2, header)));
         data.add(parseCsv(App.readByLen(35, header)));
-        data.add(parseCsv(App.readByLen(95, header)));
+        // CORRECCION DESFASE
+        data.add(parseCsv(App.readByLen(legacy ? 96 : 95, header)));
         data.add(parseCsv(App.readByLen(40, header)));
-        data.add(parseCsv(App.readByLen(80, header)));
+        // direccEf
+        data.add(parseCsv(App.readByLen(legacy ? 81 : 80, header)));
         data.add(parseCsv(App.readByLen(10, header)));
         data.add(parseCsv(App.readByLen(50, header)));
         data.add(parseCsv(App.readByLen(40, header)));
@@ -280,17 +283,21 @@ public class ParserUtils {
         data.add(parseCsv(App.readByLen(35, header)));
         data.add(parseCsv(App.readByLen(80, header)));
         data.add(parseCsv(App.readByLen(40, header)));
-        data.add(parseCsv(App.readByLen(148, header)));
+        // direccRf
+        data.add(parseCsv(App.readByLen(legacy ? 149 : 148, header)));
         data.add(parseCsv(App.readByLen(10, header)));
         data.add(parseCsv(App.readByLen(50, header)));
-        data.add(parseCsv(App.readByLen(40, header)));
+        // provRf
+        data.add(parseCsv(App.readByLen(legacy ? 41 : 40, header)));
         data.add(parseCsv(App.readByLen(3, header)));
         data.add(parseCsv(App.readByLen(25, header)));
         data.add(parseCsv(App.readByLen(80, header)));
-        data.add(parseCsv(App.readByLen(148, header)));
+        // DireccionRecep
+        data.add(parseCsv(App.readByLen(legacy ? 150 : 148, header)));
         data.add(parseCsv(App.readByLen(10, header)));
         data.add(parseCsv(App.readByLen(50, header)));
-        data.add(parseCsv(App.readByLen(40, header)));
+        // provRecep
+        data.add(parseCsv(App.readByLen(legacy ? 41 : 40, header)));
         data.add(parseCsv(App.readByLen(3, header)));
         data.add(parseCsv(App.readByLen(80, header)));
         data.add(parseCsv(App.readByLen(40, header)));
@@ -333,30 +340,36 @@ public class ParserUtils {
         data.add(parseCsv(App.readByLen(50, header)));
         data.add(parseCsv(App.readByLen(8, header)));
         data.add(parseCsv(App.readByLen(1, header)));
-        data.add(parseCsv(App.readByLen(8, header)));
-        data.add(parseCsv(App.readByLen(90, header)));
-        data.add(parseCsv(App.readByLen(80, header)));
+        // delegco
+        data.add(parseCsv(App.readByLen(legacy ? 3 : 8, header)));
+        // desdeleg
+        data.add(parseCsv(App.readByLen(legacy ? 91 : 90, header)));
+        // dirdeleg
+        data.add(parseCsv(App.readByLen(legacy ? 82 : 80, header)));
         data.add(parseCsv(App.readByLen(14, header)));
         data.add(parseCsv(App.readByLen(14, header)));
-        data.add(parseCsv(App.readByLen(4, header)));
+        // division
+        data.add(parseCsv(App.readByLen(legacy ? 3 : 4, header)));
         data.add(parseCsv(App.readByLen(40, header)));
         data.add(parseCsv(App.readByLen(25, header)));
         data.add(parseCsv(App.readByLen(2, header)));
         data.add(parseCsv(App.readByLen(50, header)));
-        data.add(parseCsv(App.readByLen(100, header)));
-        data.add(parseCsv(App.readByLen(120, header)));
+        // desdSe
+        data.add(parseCsv(App.readByLen(legacy ? 102 : 100, header)));
+        // rmercant
+        data.add(parseCsv(App.readByLen(legacy ? 122 : 120, header)));
         data.add(parseCsv(App.readByLen(1, header)));
         data.add(parseCsv(App.readByLen(2, header)));
         data.add(parseCsv(App.readByLen(2, header)));
-        data.add(parseCsv(App.readByLen(legacy? 2 : 18, header)));
+        data.add(parseCsv(App.readByLen(legacy ? 2 : 18, header)));
         data.add(parseCsv(App.readByLen(50, header)));
         data.add(parseCsv(App.readByLen(100, header)));
-        data.add(parseCsv(App.readByLen(legacy? 2 : 17, header)));
+        data.add(parseCsv(App.readByLen(legacy ? 2 : 17, header)));
         data.add(parseCsv(App.readByLen(65, header)));
-        data.add(parseCsv(App.readByLen(legacy? 10 : 100, header)));
-        data.add(parseCsv(App.readByLen(legacy? 3 : 8, header)));
-        data.add(parseCsv(App.readByLen(legacy? 3 : 100, header)));
-        data.add(parseCsv(App.readByLen(legacy? 20 : 100, header)));
+        data.add(parseCsv(App.readByLen(legacy ? 10 : 100, header)));
+        data.add(parseCsv(App.readByLen(legacy ? 3 : 8, header)));
+        data.add(parseCsv(App.readByLen(legacy ? 3 : 100, header)));
+        data.add(parseCsv(App.readByLen(legacy ? 20 : 100, header)));
         data.add(parseCsv(App.readByLen(5, header)));
         data.add(parseCsv(App.readByLen(5, header)));
         data.add(parseCsv(App.readByLen(2, header)));
@@ -377,7 +390,7 @@ public class ParserUtils {
         data.add(parseCsv(App.readByLen(35, header)));
         data.add(parseCsv(App.readByLen(35, header)));
         data.add(parseCsv(App.readByLen(8, header)));
-        data.add(parseCsv(App.readByLen(legacy? 3 : 18, header)));
+        data.add(parseCsv(App.readByLen(legacy ? 3 : 18, header)));
         data.add(parseCsv(App.readByLen(240, header)));
         data.add(parseCsv(App.readByLen(100, header)));
         data.add(parseCsv(App.readByLen(9, header)));
